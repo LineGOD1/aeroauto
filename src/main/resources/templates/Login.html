@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/login.css">
+    <title>Aero Auto</title>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="nav-logo">
+                <p class="brand">Aero<strong> Auto</strong></p>
+            </div>
+
+        </nav>
+
+      
+        <div class="form-box">
+
+            <div class="login-container" id="login">
+
+                <div th:if="${param.success}">
+                    You successfully registered. Please use your credentials to log in.
+                </div>
+                <div th:if="${param.error}">
+                    Login or password incorrect.
+                </div>
+
+                <div th:if="${param.logout}">
+                    You've been logged out.
+                </div>
+
+                <div class="top">
+                    <form th:action="@{/login3}" method="post">
+                        <span>Não tem uma conta? <a href="/cad_pessoa">Criar conta</a></span>
+                        <header>Entrar</header>
+                    </form>
+
+
+                </div>
+                <form th:action="@{/login}" method="post">
+                <div class="input-box">
+                    <input type="text" class="input-field" name="username" placeholder="Usuário ou Email">
+                    <i class="bx bx-user"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" class="input-field" name="password" placeholder="Senha">
+                    <i class="bx bx-lock-alt"></i>
+                </div>
+                <div class="input-box">
+                    <input type="submit" class="submit" value="ACESSAR CONTA">
+                </div>
+                </form>
+                <div class="two-col">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
